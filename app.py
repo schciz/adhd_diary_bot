@@ -61,7 +61,7 @@ async def post_init(application):
 if __name__ == "__main__":
     application = (
         ApplicationBuilder()
-        .token("8346314926:AAFsK91u8TArjIDJ9MMEZsUtY7N8vLl6aUI")
+        .token("TOKEN")
         .post_init(post_init)
         .build()
     )
@@ -202,3 +202,4 @@ if __name__ == "__main__":
     )
 
     application.run_polling()
+
