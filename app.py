@@ -1,5 +1,6 @@
 import logging
 import re
+import os
 
 from sqlalchemy import func, select
 from telegram import KeyboardButton, ReplyKeyboardMarkup
@@ -59,9 +60,11 @@ async def post_init(application):
 
 
 if __name__ == "__main__":
+    api_token = os.getenv("API_TOKEN")
+
     application = (
         ApplicationBuilder()
-        .token("TOKEN")
+        .token(api_token)
         .post_init(post_init)
         .build()
     )
@@ -202,4 +205,3 @@ if __name__ == "__main__":
     )
 
     application.run_polling()
-
